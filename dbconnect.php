@@ -19,7 +19,6 @@
     echo "<pre>";
     print_r($creationarray);
     echo "<pre/>";
-    exit();
 
 ?>
 

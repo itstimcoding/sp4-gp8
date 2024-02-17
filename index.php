@@ -16,22 +16,26 @@
         <img src="... more" alt="other reactions">
     </div>
     <div class="top-recent-qrcode-wrapper">
-        <div class="top-two">
-            <h3>2</h3>
-            <a href="top2"><img src="" alt="Top second creation"></a>
-            <h4>14</h4>
-            <img src="vote" alt="vote">
-            <img src="others" alt="reaction">
-            <img src="... more" alt="other reactions">
-        </div>
-        <div class="top-three">
-            <h3>2</h3>
-            <a href="top3"><img src="" alt="Top third creation"></a>
-            <h4>14</h4>
-            <img src="vote" alt="vote">
-            <img src="others" alt="reaction">
-            <img src="... more" alt="other reactions">
-        </div>
+        <a href="top2">
+            <div class="top-two">
+                <h3>2</h3>
+                <a href="top2"><img src="" alt="Top second creation"></a>
+                <h4>14</h4>
+                <img src="vote" alt="vote">
+                <img src="others" alt="reaction">
+                <img src="... more" alt="other reactions">
+            </div>
+        </a>
+        <a href="top3">
+            <div class="top-three">
+                <h3>2</h3>
+                <a href="top3"><img src="" alt="Top third creation"></a>
+                <h4>14</h4>
+                <img src="vote" alt="vote">
+                <img src="others" alt="reaction">
+                <img src="... more" alt="other reactions">
+            </div>
+        </a>
         <div class="qr-code">
             <h2>Vote for your favourite creations!</h2>
             <img src="" alt="qr code for voting">

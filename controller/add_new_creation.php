@@ -10,7 +10,7 @@ $dbcon = open_db_connection();
 $creator_name = null;
 $likes = null;
 $surpised = null;
-$post_img = null;
+$creation_img = null;
 $smart = null;
 $target_dir = "uploads/";
 $target_file = null; //the name of the image that is uploaded in the uploads folder
@@ -23,16 +23,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $likes = $_POST['likes'];
     $surpised = $_POST['surpised'];
     $smart = $_POST['smart'];
-    $post_img = $_FILES['post-img'];
-    if (empty($post_img)) {
-        $post_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg.png';
+    $creation_img = $_FILES['post-img'];
+    if (empty($creation_img)) {
+        $creation_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg.png';
     }
 
     
     
 
     $status_to_save_image = save_to_uploads_folder();
-    $status = save_new_post(); //call the function that saves the data
+    $status = save_new_creation(); //call the function that saves the data
 
     mysqli_close($dbcon); //close database connection once all required sql statements are run
 
@@ -47,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 
 
-function save_new_post(){
+function save_new_creation(){
     
     global $dbcon;
 
-    global $creator_name , $likes ,$surpised, $smart, $post_img, $db_file; 
+    global $creator_name , $likes ,$surpised, $smart, $creation_img, $db_file; 
 
-    $sql = "INSERT INTO posts (creator_name, likes, surpised, smart, image)";
+    $sql = "INSERT INTO creations (creator_name, likes, surpised, smart, image)";
     $sql = $sql." VALUES('{$creator_name}','{$likes}','{$surpised}','{$smart}','{$db_file}')";
     $mysqli_result = mysqli_query($dbcon,$sql);
     return $mysqli_result;

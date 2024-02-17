@@ -23,7 +23,7 @@
         </a>
     </div>
     <div class="create-post-form">
-            <form id="form-wrapper" action="controller/save_new_post.php" method="POST" enctype="multipart/form-data">
+            <form id="form-wrapper" action="controller/save_new_creation.php" method="POST" enctype="multipart/form-data">
                 <div class="image-upload-container">
                     
                     <label for="images" class="drop-container" onclick="document.getElementById('post-img').click()";>

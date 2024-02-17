@@ -25,27 +25,22 @@
             <form id="form-wrapper" action="controller/save_new_creation.php" method="POST" enctype="multipart/form-data">
                 <div class="image-upload-container">
                     
-                    <label for="images" class="drop-container" onclick="document.getElementById('creation-img').click()";>
+                    <label for="images" class="drop-container">
                         <span class="drop-area"> </span>
-                        <input type="file" name="creation-img" id="creation-img">
-                        <img src="assets/Add file icon.png" alt="Upload image button">
-                        <span>Upload an Image</span>
-                        
-                        <!-- Took away "drag and drop" because it doesn't work -->
-                        <h3>Choose a file</h3>
+                        <input type="file" name="creation-img" id="creation-img"> 
                     </label>
                 </div> 
                 <div class="text-input-wrapper">   
                     <label for="creator-name" id="creator-name">Creator Name</label>
                     <input type="text" name="creator-name" placeholder="Add a creator name">
                     <label for="like-count">Like Count </label>
-                    <input type="text" name="like-count" placeholder="Add no. of likes">
+                    <input type="number" name="like-count" placeholder="Add no. of likes">
                     <label for="surprised-count">Suprised reaction Count </label>
-                    <input type="text" name="surprised-count" placeholder="Add no. of surprised reactions">
+                    <input type="number" name="surprised-count" placeholder="Add no. of surprised reactions">
                     <label for="question-mark-count">Question mark reaction Count </label>
-                    <input type="text" name="question-mark-count" placeholder="Add no. of question mark reactions">
+                    <input type="number" name="question-mark-count" placeholder="Add no. of question mark reactions">
                     <label for="smart-count">Smart reaction Count </label>
-                    <input type="text" name="smart-count" placeholder="Add no. of smart reactions">
+                    <input type="number" name="smart-count" placeholder="Add no. of smart reactions">
 
                     <input type="submit" id="create-creation-submit" name="submit" value="Submit">
                 </div>                  

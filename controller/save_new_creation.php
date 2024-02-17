@@ -17,6 +17,8 @@ $target_dir = "uploads/";
 $target_file = null; //the name of the image that is uploaded in the uploads folder
 $db_file = null; //file format saved to database (doesn't have file directory)
 
+$status_to_save_image = null;
+
 //check if the request is a post 
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     
@@ -27,13 +29,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $smart = $_POST['smart-count'];
     $creation_img = $_FILES['creation-img'];
     if (empty($creation_img)) {
-        $creation_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg.png';
+        $creation_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg';
+        $status_to_save_image = true;
+    } else {
+        // dont save to folder if using default images (prevents false negatives from status)
+        $status_to_save_image = save_to_uploads_folder();
     }
 
-    
-    
 
-    $status_to_save_image = save_to_uploads_folder();
     $status = save_new_creation(); //call the function that saves the data
 
     mysqli_close($dbcon); //close database connection once all required sql statements are run
@@ -41,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     if($status==true && $status_to_save_image==true){
         header("Location: ../index.php?submission=success"); 
         exit();
-    }else{
+    }else{ 
         header("Location: ../index.php?submission=failure"); 
         exit();
     }

@@ -9,9 +9,10 @@ $dbcon = open_db_connection();
 
 $creator_name = null;
 $likes = null;
-$surpised = null;
-$creation_img = null;
+$surprised = null;
+$question_mark = null;
 $smart = null;
+$creation_img = null;
 $target_dir = "uploads/";
 $target_file = null; //the name of the image that is uploaded in the uploads folder
 $db_file = null; //file format saved to database (doesn't have file directory)
@@ -19,11 +20,12 @@ $db_file = null; //file format saved to database (doesn't have file directory)
 //check if the request is a post 
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     
-    $creator_name = $_POST['creator_name'];
-    $likes = $_POST['likes'];
-    $surpised = $_POST['surpised'];
-    $smart = $_POST['smart'];
-    $creation_img = $_FILES['post-img'];
+    $creator_name = $_POST['creator-name'];
+    $likes = $_POST['like-count'];
+    $surprised = $_POST['surprised-count'];
+    $question_mark = $_POST['question-mark-count'];
+    $smart = $_POST['smart-count'];
+    $creation_img = $_FILES['creation-img'];
     if (empty($creation_img)) {
         $creation_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg.png';
     }
@@ -51,10 +53,10 @@ function save_new_creation(){
     
     global $dbcon;
 
-    global $creator_name , $likes ,$surpised, $smart, $creation_img, $db_file; 
+    global $creator_name , $likes ,$surprised, $smart, $question_mark, $creation_img, $db_file; 
 
-    $sql = "INSERT INTO creations (creator_name, likes, surpised, smart, image)";
-    $sql = $sql." VALUES('{$creator_name}','{$likes}','{$surpised}','{$smart}','{$db_file}')";
+    $sql = "INSERT INTO creations (creator_name, likes, surprised, question_mark, smart,  image_url)";
+    $sql = $sql." VALUES('{$creator_name}','{$likes}','{$surprised}','{$question_mark}','{$smart}','{$db_file}')";
     $mysqli_result = mysqli_query($dbcon,$sql);
     return $mysqli_result;
 }    
@@ -66,13 +68,13 @@ function save_to_uploads_folder(){
     $ext = null;
     $unique_id = null;
    
-    $filename = pathinfo($_FILES['post-img']['name'], PATHINFO_FILENAME);
-    $ext = pathinfo($_FILES["post-img"]["name"],PATHINFO_EXTENSION);
+    $filename = pathinfo($_FILES['creation-img']['name'], PATHINFO_FILENAME);
+    $ext = pathinfo($_FILES["creation-img"]["name"],PATHINFO_EXTENSION);
     $unique_id = time();
     $target_file =$target_dir.$filename."_".$unique_id.".".$ext;
     $db_file = $filename."_".$unique_id.".".$ext;
 
-    if (move_uploaded_file($_FILES["post-img"]["tmp_name"], "../".$target_file)) {
+    if (move_uploaded_file($_FILES["creation-img"]["tmp_name"], "../".$target_file)) {
         return true;
     }else{
         return false;

@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     mysqli_close($dbcon); //close database connection once all required sql statements are run
 
     if($status==true && $status_to_save_image==true){
-        header("Location: ../hidden_creation_input_GPJIm9FcqCeEgpHksxUs3OpI9xpv95jX%207pLUrOKBRdcIZhX9iksIUPHsF4BYPE1S%20xvHpyuk2aXGM9QZB5PKHUoxSGhiyIv83%20krPQkRJShit9SOSUiiTLi1nFhyiK5jb8.php?submission=success"); 
+        header("Location: ..hidden_creation_input_GPJIm9FcqCeEgpHksxUs3Op.php?submission=success"); 
         exit();
     }else{ 
-        header("Location: ../hidden_creation_input_GPJIm9FcqCeEgpHksxUs3OpI9xpv95jX%207pLUrOKBRdcIZhX9iksIUPHsF4BYPE1S%20xvHpyuk2aXGM9QZB5PKHUoxSGhiyIv83%20krPQkRJShit9SOSUiiTLi1nFhyiK5jb8.php?submission=failure"); 
+        header("Location: ../hidden_creation_input_GPJIm9FcqCeEgpHksxUs3Op.php?submission=failure"); 
         exit();
     }
 }

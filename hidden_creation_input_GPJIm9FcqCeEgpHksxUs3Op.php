@@ -1,7 +1,7 @@
 <?php 
 
 // use complicated url because there is a lack of an account feature and admin feature
-require "../utilities/database.php";
+require "utilities/database.php";
 $dbcon = open_db_connection();
 
 $sql = "SELECT * from creations ORDER BY created DESC";
@@ -57,33 +57,6 @@ mysqli_free_result($mysqli_result);
             </form>
         
     </div>
-    <div class="admin-wrapper">
-            <h2>View all creation (newest first)</h2>
-            <table class="general-table">
-                <tr class="list-headers">
-                    <td>Creator Name</td>
-                    <td>Likes</td>
-                    <td>Surpised</td>
-                    <td>Smart</td>
-                    <td>Image url</td>
-                    <td>Created datetime</td>
-                </tr>
-                <?php foreach($creations_array as $creation){ 
-                    // give a different class if user is soft deleted
-                        if ($creation['is_deleted']){ ?>
-                            <tr class="single-user-row faded" title="user has been soft deleted">    
-                    <?php } else { ?>
-                            <tr class="single-user-row">
-                    <?php } ?>
-                                <td class="center"><img class="mini-profile" src="profile_pics/<?php echo $creation['profile_pic'] ?>"/></td>
-                                <td><?php echo $creation['name'] ?></td>
-                                <td><?php echo $creation['email'] ?></td>
-                                <td><?php echo $creation['dob'] ?></td>  
-                                <td><a class="hard-delete-btn" href="controller/hard_delete_user.php?id=<?php echo $creation['id']?>"> Perm delete</a></td>
-                            </tr>
-                <?php } ?>
-            </table>
-        </div>
 </body>
 <!-- js script -->
 <script src="scripts/main.js"></script>

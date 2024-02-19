@@ -55,7 +55,11 @@ body {
     flex-direction: column;
 }
 
+.form-input-wrapper label {
+    margin-top: 20px;
+}
+
 .form-input-wrapper input {
     padding: 20px 250px 20px 20px;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }

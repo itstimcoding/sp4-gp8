@@ -3,7 +3,6 @@
 /******Admin No:    221876N***********/
 
 require "../utilities/database.php";
-
 $dbcon = open_db_connection();
 
 

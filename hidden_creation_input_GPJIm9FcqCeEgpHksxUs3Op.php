@@ -15,10 +15,11 @@
 </head>
 <body>
 
+    <h1 class=hidden-h1>API for unity to insert data into the database</h1>
+    <h2 class=hidden-h2>That is why this website is minimally styled</h2>
     <div class="nav-back">
         <a href="index.php">
-            <img src="assets/back_arrow_left.svg" alt="Go --Back button">
-            Go Back
+            <p>Go Back to index.php<p>
         </a>
     </div>
     <div class="create-creation-form">
@@ -30,17 +31,17 @@
                         <input type="file" name="creation-img" id="creation-img"> 
                     </label>
                 </div> 
-                <div class="text-input-wrapper">   
+                <div class="form-input-wrapper">   
                     <label for="creator-name" id="creator-name">Creator Name</label>
                     <input type="text" name="creator-name" placeholder="Add a creator name">
                     <label for="like-count">Like Count </label>
-                    <input type="number" name="like-count" placeholder="Add no. of likes">
+                    <input type="number" name="like-count" placeholder="(number) Add no. of likes">
                     <label for="surprised-count">Suprised reaction Count </label>
-                    <input type="number" name="surprised-count" placeholder="Add no. of surprised reactions">
+                    <input type="number" name="surprised-count" placeholder="(number) Add no. of surprised reactions">
                     <label for="question-mark-count">Question mark reaction Count </label>
-                    <input type="number" name="question-mark-count" placeholder="Add no. of question mark reactions">
+                    <input type="number" name="question-mark-count" placeholder="(number) Add no. of question mark reactions">
                     <label for="smart-count">Smart reaction Count </label>
-                    <input type="number" name="smart-count" placeholder="Add no. of smart reactions">
+                    <input type="number" name="smart-count" placeholder="(number) Add no. of smart reactions">
 
                     <input type="submit" id="create-creation-submit" name="submit" value="Submit">
                 </div>                  

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: white;
+}
+/* Reset heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* for making elements like "show password" label unselectable */
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* styling for hidden input (api for unity to upload game new creations from the minigames to ) */
+.hidden-h1 {
+    font-size: 5em;
+}
+
+.hidden-h2 {
+    font-size: 2em;
+}
+.create-creation-form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-wrapper input {
+    padding: 20px 250px 20px 20px;
+    margin-top: 20px;
+}

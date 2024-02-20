@@ -39,7 +39,7 @@
     </a>
     <?php } ?>
     <?php if(isset($top3_creations_array[0])){?>
-    <a href="top1" class="noDecoration">
+    <a href="top3" class="noDecoration">
         <div class="top-one top3_indiv">
             <h3 class="h3-placing not-selectable">1</h3>
             <img src="uploads/<?php echo $top3_creations_array[0]['image_url']?>" alt="Top second creation">

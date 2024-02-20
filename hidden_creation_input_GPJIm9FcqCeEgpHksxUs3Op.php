@@ -29,7 +29,7 @@ mysqli_free_result($mysqli_result);
     <h2 class=hidden-h2>That is why this website is minimally styled</h2>
     <div class="nav-back">
         <a href="index.php">
-            <p>Go Back to index.php<p>
+            <p>< Go Back to index.php<p>
         </a>
     </div>
     <div class="create-creation-form">

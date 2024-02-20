@@ -92,7 +92,6 @@ background: #555;
 
 .top3_indiv {
     padding:16px 16px 12px 16px;
-    max-width:39.3vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -102,14 +101,12 @@ background: #555;
     margin-right: 3em;
 }
 
-
-.top-two {
-    height: 100%;
-    width: 100%;
+.top-two, .top-three {
+    max-width: 34vh;
 }
 
 .top3_indiv img {
-    height: 35vh;
+    height: 30vh;
     object-fit:cover;
     object-position: center;
     border-radius: 24px;
@@ -132,6 +129,15 @@ background: #555;
 }
 
 /* styling for first place top  */
+.top-one {
+   width: 25em;
+}
+
+.top-one img {
+    height: 40vh;
+}
+
+
 
 
 .h3-placing{
@@ -158,8 +164,8 @@ background: #555;
 }
 
 .reactions img {
-   height: 60px;
-   width: 60px;
+   height: 40px;
+   width: 40px;
 }
 
 h2 {
@@ -183,6 +189,7 @@ h2 {
     font-family: raleway, sans-serif;
     font-weight: 700;
     margin-top: 30px;
+    color: white;
 }
 
 .recent-creations img {
@@ -216,11 +223,13 @@ h2 {
 
 /* styling for hidden input (api for unity to upload game new creations from the minigames to ) */
 .hidden-h1 {
-    font-size: 5em;
+    font-size: 3em;
+    margin-left: 100px;
 }
 
 .hidden-h2 {
     font-size: 2em;
+    margin-left: 100px;
 }
 .create-creation-form {
     display: flex;
@@ -238,6 +247,13 @@ h2 {
 }
 
 .form-input-wrapper input {
-    padding: 20px 250px 20px 20px;
+    padding: 20px 20px 20px 20px;
     margin-bottom: 20px;
+}
+
+.nav-back {
+    border-radius: 30px;
+    padding: 5px 10px;
+    font-size: 30px;
+    margin-left: 40px;
 }

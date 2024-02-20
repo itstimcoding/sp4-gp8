@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     mysqli_close($dbcon); //close database connection once all required sql statements are run
 
     if($status==true && $status_to_save_image==true){
-        header("Location: ..hidden_creation_input_GPJIm9FcqCeEgpHksxUs3Op.php?submission=success"); 
+        header("Location: ../hidden_creation_input_GPJIm9FcqCeEgpHksxUs3Op.php?submission=success"); 
         exit();
     }else{ 
         header("Location: ../hidden_creation_input_GPJIm9FcqCeEgpHksxUs3Op.php?submission=failure"); 

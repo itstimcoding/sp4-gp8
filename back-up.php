@@ -12,8 +12,6 @@
         // interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
 
 
-
-
         
         setInterval(function(){
             // if(isNew == 1){

@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/wrr3fkp.css">
     <script>
 
     $(document).ready(function(){
@@ -37,31 +38,29 @@
         load_recent_works();
 
         // interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
-        setInterval(function(){
-            load_recent_works();
-            load_top_works();
-        },3000);       
+        // setInterval(function(){
+        //     load_top_works();
+        //     load_recent_works();
+        // },3000);       
     });
     </script>
     
     <title>Main page</title>
 </head>
 <body>
-    <h1>Top Creations</h1>
-    <div class="top-creations">
-        
-        <!-- using include to fetch data from update folders to prevent having to write repeat code -->
-        <?php //include "controller/top3_fetch_data.php"; ?>            
-    </div>
-    <h2>Recently made creations</h2>
-    <div class="recent-creations">
-        
-        <div id="recent-creations-content">
+    <div class="homepage">
+        <h1 class="big-header not-selectable">Top Creations</h1>
+        <div class="top-creations">          
         </div>
-        <?php //include "controller/recent_fetch_data.php"; ?>
+        <h2 class = "recent-h2 not-selectable">Recently made creations</h2>
+        <div class="recent-creations">   
+            <div id="recent-creations-content">
+        </div>
     </div>
+    </div>
+    
 
     
     
 </body>
-</html>
+</html> 

@@ -17,37 +17,64 @@
 
 
 <div class="top3-wrapper">
-    <a href="top2">
-        <div class="top-two">
-            <h3>2</h3>
-            <a href="top2"><img src="<?php echo $top3_creations_array[1]['image_url']?>" alt="Top second creation"></a>
-            <h4><?php echo $top3_creations_array[1]['likes']?></h4>
-            <img src="vote" alt="vote">
-            <img src="others" alt="reaction">
-            <img src="... more" alt="other reactions">
+    <a href="top2" class="noDecoration">
+        <div class="top-two top3_indiv">
+            <h3 class="h3-placing not-selectable">2</h3>
+            <img src="uploads/<?php echo $top3_creations_array[1]['image_url']?>" alt="Top second creation">
+            <div class="reactions">
+                <h4><?php echo $top3_creations_array[1]['likes']?></h4>   
+                <img src="assets/heart.png"  alt="vote">
+                <?php if (!empty($top3_creations_array[1]['surprised'])) { ?>
+                    <img src="assets/surprised.png" alt="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[1]['question_mark'])) { ?>
+                    <img src="assets/question_mark.png" alt="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[1]['smart'])) { ?>
+                    <img src="assets/smart.png" alt="reaction">
+                <?php } ?> 
+            </div>
+            
         </div>
     </a>
-    <a href="top1">
-    <div class="top-one">
-        <h2>1</h2>
-        <a href="top1"><img src="<?php echo $top3_creations_array[0]['image_url']?>" alt="Top creation"></a>
-        <div class="reactions">
-            <h3><?php echo $top3_creations_array[0]['likes']?></h3>
-            <img src="vote" alt="vote">
-            <img src="others" alt="reaction">
-            <img src="... more" alt="other reactions">  
+    <a href="top1" class="noDecoration">
+        <div class="top-two top3_indiv">
+            <h3 class="h3-placing not-selectable">1</h3>
+            <img src="uploads/<?php echo $top3_creations_array[0]['image_url']?>" alt="Top second creation">
+            <div class="reactions">
+                <h4><?php echo $top3_creations_array[0]['likes']?></h4>   
+                <img src="assets/heart.png"  alt="vote">
+                <?php if (!empty($top3_creations_array[0]['surprised'])) { ?>
+                    <img src="assets/surprised.png" alt="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[0]['question_mark'])) { ?>
+                    <img src="assets/question_mark.png" alt="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[0]['smart'])) { ?>
+                    <img src="assets/smart.png" alt="reaction">
+                <?php } ?> 
+            </div>
+            
         </div>
-    </div>
     </a>
-    
-    <a href="top3">
-        <div class="top-three">
-            <h3>2</h3>
-            <a href="top3"><img src="<?php echo $top3_creations_array[2]['image_url']?>" alt="Top third creation"></a>
-            <h4><?php echo $top3_creations_array[2]['likes']?></h4>
-            <img src="vote" alt="vote">
-            <img src="others" alt="reaction">
-            <img src="... more" alt="other reactions">
+    <a href="top1" class="noDecoration">
+        <div class="top-two top3_indiv">
+            <h3 class="h3-placing not-selectable">3</h3>
+            <img src="uploads/<?php echo $top3_creations_array[2]['image_url']?>" alt="Top second creation">
+            <div class="reactions">
+                <h4><?php echo $top3_creations_array[2]['likes']?></h4>   
+                <img src="assets/heart.png"  alt="vote">
+                <?php if (!empty($top3_creations_array[2]['surprised'])) { ?>
+                    <img src="assets/surprised.png" alt ="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[2]['question_mark'])) { ?>
+                    <img src="assets/question_mark.png"alt="reaction">
+                <?php } ?>
+                <?php if (!empty($top3_creations_array[2]['smart'])) { ?>
+                    <img src="assets/smart.png" alt="reaction">
+                <?php } ?> 
+            </div>
+            
         </div>
     </a>
 

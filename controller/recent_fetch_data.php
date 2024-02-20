@@ -1,3 +1,4 @@
+
 <?php
     require "../utilities/database.php";
     if (!function_exists('getConnection')) { 
@@ -13,10 +14,12 @@
 ?>
 
 
-<?php foreach($recent_creations_array as $recent_creation) { ?>              
-    <img src="uploads/<?php echo $recent_creation['image_url']?>" alt="recent creation"> 
+<?php foreach($recent_creations_array as $recent_creation) { ?>  
+    <div class="recent">
+        <img src="uploads/<?php echo $recent_creation['image_url']?>" alt="recent creation"> 
     <h5><?php echo $recent_creation['likes']?></h5>
     <h5><?php echo $recent_creation['created']?></h5>
+    </div>            
 <?php } ?>
 
 

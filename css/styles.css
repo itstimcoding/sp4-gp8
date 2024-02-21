@@ -27,6 +27,8 @@ body {
 body {
     background: linear-gradient(235deg, #55cac5 -15%, #fa4c1f 20.46%, #f9ab02 100%);
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* styling for scrollbar  */

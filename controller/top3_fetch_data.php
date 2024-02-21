@@ -17,18 +17,7 @@
 
 <?php   if(isset($top3_creations_array[1])){
     $sum = $top3_creations_array[1]['likes'] + $top3_creations_array[1]['surprised'] + $top3_creations_array[1]['question_mark'] + $top3_creations_array[1]['smart'];
-    echo "<pre>";
-    echo $sum."</br>";
-    echo $top3_creations_array[1]['likes']."</br>";
-    echo $top3_creations_array[1]['surprised']."</br>";
-    echo $top3_creations_array[1]['question_mark']."</br>";
-    echo $top3_creations_array[1]['smart']."</br>";
-
-    echo "</pre>";
-
-    
     ?>
-
 <div class="top3-wrapper">
     <a href="vote_creation.php?creation_id=<?php echo $top3_creations_array[1]['id']?>" class="noDecoration">
         <div class="top-two top3_indiv" id="top_3_position_2">
@@ -54,7 +43,7 @@
     </a>
     <?php } ?>
     <?php if(isset($top3_creations_array[0])){
-        $sum = $top3_creations_array[1]['likes'] + $top3_creations_array[1]['surprised'] + $top3_creations_array[1]['question_mark'] + $top3_creations_array[1]['smart']; ?>
+        $sum = $top3_creations_array[0]['likes'] + $top3_creations_array[0]['surprised'] + $top3_creations_array[0]['question_mark'] + $top3_creations_array[0]['smart']; ?>
     <a href="vote_creation.php?creation_id=<?php echo $top3_creations_array[0]['id']?>" class="noDecoration">
         <div class="top-one top3_indiv" id="top_3_position_1">
             <h3 class="h3-placing not-selectable">1</h3>
@@ -78,7 +67,8 @@
         </div>
     </a>
     <?php } ?>
-    <?php if(isset($top3_creations_array[2])){?>
+    <?php if(isset($top3_creations_array[2])){
+        $sum = $top3_creations_array[2]['likes'] + $top3_creations_array[2]['surprised'] + $top3_creations_array[2]['question_mark'] + $top3_creations_array[2]['smart']; ?>
     <a href="vote_creation.php?creation_id=<?php echo $top3_creations_array[2]['id']?>" class="noDecoration">
         <div class="top-three top3_indiv" id="top_3_position_3">
             <h3 class="h3-placing not-selectable">3</h3>

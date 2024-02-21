@@ -12,3 +12,10 @@ For mobile, visitors will be using the will both homepage for browsing and the s
 
 Homepage(onsite TV, mobile)
 Creation.php(mobile)
+
+Features:
+- Insertion into database (Unity API, *hidden_creation_in...php*)
+- Updating record (Visitors Voting/reacting, *creation.php,controller/save_new_creation.php*)
+- AJAX realtime leaderboard for onsite leaderboard/ showcase (Visitors Voting/reacting, *top3/recent_fetch_data, head tag in index.php*)
+- Listing database data (*same as previous*)
+- Responsive (index.php only)

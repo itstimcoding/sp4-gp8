@@ -57,6 +57,7 @@
 <body>
     <img src="assets/background.png" alt="graffiti like wall painting design" class="page-background">
     <div class="homepage">
+        <!-- data is inserted using ajax call (using included caused problems such as the path required for database.php changing) -->
         <h1 class="big-header not-selectable">Top Creations</h1>
         <div class="top-creations">          
         </div>

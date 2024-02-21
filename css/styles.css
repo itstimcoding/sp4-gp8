@@ -65,6 +65,14 @@ background: #555;
     user-select: none;
 }
 
+
+.page-background {
+    position: absolute;
+    z-index: -200;
+    width:100vw;
+    object-fit: contain;
+}
+
 /* homepage (leaderboard) */
 .homepage {
     height: 100vh;
@@ -135,14 +143,11 @@ background: #555;
     height: 40vh;
 }
 
-
-
-
 .h3-placing{
     text-decoration: none;
 }
 
-/* recent creations  */
+
 .reactions {
     display: flex;
     flex-direction: row;
@@ -166,6 +171,7 @@ background: #555;
    width: 40px;
 }
 
+/* recent creations  */
 h2 {
     font-size: 20px;
     font-weight: 600;

@@ -30,39 +30,74 @@
     // Calculate time elapsed
 
     //credit = https://stackoverflow.com/questions/1416697/converting-timestamp-to-time-ago-in-php-e-g-1-day-ago-2-days-ago
-    function time_elapsed_string($datetime, $full = false) {
-        $now = new DateTime;
-        $then = new DateTime( $datetime );
-        $diff = (array) $now->diff( $then );
+    // function time_elapsed_string($datetime, $full = false) {
+    //     $now = new DateTime;
+    //     $then = new DateTime( $datetime );
+    //     $diff = (array) $now->diff( $then );
 
-        $diff['w']  = floor( $diff['d'] / 7 );
-        $diff['d'] -= $diff['w'] * 7;
+    //     $diff['w']  = floor( $diff['d'] / 7 );
+    //     $diff['d'] -= $diff['w'] * 7;
 
-        $string = array(
-            'y' => 'year',
-            'm' => 'month',
-            'w' => 'week',
-            'd' => 'day',
-            'h' => 'hour',
-            'i' => 'minute',
-            's' => 'second',
-        );
+    //     $string = array(
+    //         'y' => 'year',
+    //         'm' => 'month',
+    //         'w' => 'week',
+    //         'd' => 'day',
+    //         'h' => 'hour',
+    //         'i' => 'minute',
+    //         's' => 'second',
+    //     );
 
-        foreach( $string as $k => & $v )
+    //     foreach( $string as $k => & $v )
+    //     {
+    //         if ( $diff[$k] )
+    //         {
+    //             $v = $diff[$k] . ' ' . $v .( $diff[$k] > 1 ? 's' : '' );
+    //         }
+    //         else
+    //         {
+    //             unset( $string[$k] );
+    //         }
+    //     }
+
+    //     if ( ! $full ) $string = array_slice( $string, 0, 1 );
+    //     return $string ? implode( ', ', $string ) . ' ago' : 'just now';
+    //  }
+
+    function time_elapsed_string( $datetime, $full = false )
+{
+    $now = new DateTime;
+    $then = new DateTime( $datetime );
+    $diff = (array) $now->diff( $then );
+
+    $diff['w']  = floor( $diff['d'] / 7 );
+    $diff['d'] -= $diff['w'] * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+
+    foreach( $string as $k => & $v )
+    {
+        if ( $diff[$k] )
         {
-            if ( $diff[$k] )
-            {
-                $v = $diff[$k] . ' ' . $v .( $diff[$k] > 1 ? 's' : '' );
-            }
-            else
-            {
-                unset( $string[$k] );
-            }
+            $v = $diff[$k] . ' ' . $v .( $diff[$k] > 1 ? 's' : '' );
         }
+        else
+        {
+            unset( $string[$k] );
+        }
+    }
 
-        if ( ! $full ) $string = array_slice( $string, 0, 1 );
-        return $string ? implode( ', ', $string ) . ' ago' : 'just now';
-     }
+    if ( ! $full ) $string = array_slice( $string, 0, 1 );
+    return $string ? implode( ', ', $string ) . ' ago' : 'just now';
+}
 
    
 ?>

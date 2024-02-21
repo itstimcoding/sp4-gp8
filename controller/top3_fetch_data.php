@@ -16,12 +16,22 @@
 ?>
 
 <?php   if(isset($top3_creations_array[1])){
-    $sum = $top3_creations_array[1]['surprised'] + $top3_creations_array[1]['question_mark'] + $top3_creations_array[1]['smart']
+    $sum = $top3_creations_array[1]['likes'] + $top3_creations_array[1]['surprised'] + $top3_creations_array[1]['question_mark'] + $top3_creations_array[1]['smart'];
+    echo "<pre>";
+    echo $sum."</br>";
+    echo $top3_creations_array[1]['likes']."</br>";
+    echo $top3_creations_array[1]['surprised']."</br>";
+    echo $top3_creations_array[1]['question_mark']."</br>";
+    echo $top3_creations_array[1]['smart']."</br>";
+
+    echo "</pre>";
+
+    
     ?>
 
 <div class="top3-wrapper">
     <a href="top2" class="noDecoration">
-        <div class="top-two top3_indiv">
+        <div class="top-two top3_indiv" id="top_3_position_2">
             <h3 class="h3-placing not-selectable">2</h3>
             <img src="uploads/<?php echo $top3_creations_array[1]['image_url']?>" alt="Top second creation">
             <div class="reactions">
@@ -45,7 +55,7 @@
     <?php } ?>
     <?php if(isset($top3_creations_array[0])){?>
     <a href="top3" class="noDecoration">
-        <div class="top-one top3_indiv">
+        <div class="top-one top3_indiv" id="top_3_position_1">
             <h3 class="h3-placing not-selectable">1</h3>
             <img src="uploads/<?php echo $top3_creations_array[0]['image_url']?>" alt="Top second creation">
             <div class="reactions">
@@ -67,7 +77,7 @@
     <?php } ?>
     <?php if(isset($top3_creations_array[2])){?>
     <a href="top1" class="noDecoration">
-        <div class="top-three top3_indiv">
+        <div class="top-three top3_indiv" id="top_3_position_3">
             <h3 class="h3-placing not-selectable">3</h3>
             <img src="uploads/<?php echo $top3_creations_array[2]['image_url']?>" alt="Top second creation">
             <div class="reactions">

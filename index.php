@@ -33,11 +33,18 @@
             });
         }
 
+        function check_db_new(){
+            $.get( "controller/recent_fetch_data.php", function( data ) {
+                document.querySelector('#');
+            });
+            
+        }
+
         // load first instance of top and recent data
         load_top_works();
         load_recent_works();
 
-        interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
+        //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
         setInterval(function(){
              load_top_works();
              load_recent_works();
@@ -56,6 +63,10 @@
         <h2 class = "recent-h2 not-selectable">Recently made creations</h2>
         <div class="recent-creations">   
             <div id="recent-creations-content">
+        </div>
+
+        <div style="display:none;" id="">
+
         </div>
     </div>
     </div>

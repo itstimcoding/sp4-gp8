@@ -27,14 +27,22 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $question_mark = $_POST['question-mark-count'];
     $smart = $_POST['smart-count'];
     $creation_img = $_FILES['creation-img'];
-    if (empty($creation_img)) {
-        $creation_img = 'rock-n-roll-monkey-LEPhZkQbUrk-unsplash.jpg';
+
+    // $creation_img will not be empty even if user does upload anything (will hv array)
+    if ($creation_img['size']==0) {
+        $creation_img = array(
+            'name'=>'xavi-cabrera-HBfsGeRE4gU-unsplash.jpg',
+            'full_path' => 'xavi-cabrera-HBfsGeRE4gU-unsplash.jpg',
+            'type' =>'image/jpeg',
+            'error' => 0,
+            'size' => 28426
+        );
         $status_to_save_image = true;
+
     } else {
         // dont save to folder if using default images (prevents false negatives from status)
         $status_to_save_image = save_to_uploads_folder();
     }
-
 
     $status = save_new_creation(); //call the function that saves the data
 

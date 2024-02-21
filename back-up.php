@@ -5,8 +5,6 @@
         //     console.log($isNew);
         //     console.log('hello world');
             
-        //     alert("amogus");
-            
         // }, "json" );
         // portion of page only reloads if new data avaliable
         // interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/

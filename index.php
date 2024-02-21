@@ -37,11 +37,11 @@
         load_top_works();
         load_recent_works();
 
-        // interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
-        // setInterval(function(){
-        //     load_top_works();
-        //     load_recent_works();
-        // },3000);       
+        interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
+        setInterval(function(){
+             load_top_works();
+             load_recent_works();
+        },3000);       
     });
     </script>
     

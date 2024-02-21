@@ -309,11 +309,11 @@ h4.creation-page {
  }
 
 /* emotes untapped state */
-.emotes p, .emotes img{
+.emotes img{
     opacity: 0.8;
 }
 
-.emotes p:hover, .emotes img:hover{
+.emotes img:hover{
     opacity: 1;
 }
 

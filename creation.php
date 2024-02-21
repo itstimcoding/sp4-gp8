@@ -58,7 +58,9 @@
             <p>0</p>
           <?php } ?>
           <!-- image for reaction above -->
-          <img src="assets/heart.png" class="" alt="votes">
+          <!-- <img src="assets/heart.png" class="" id="heart-<?php //$creations_array[0]['id']?>" alt="votes"> -->
+          <img src="assets/heart.png" class="v" id="heart" alt="votes" onclick="heartAnimation()">
+
 
           <?php if (!empty($creations_array[0]['surprised'])) { ?>
             <p><?php echo $creations_array[0]['surprised'] ?></p>

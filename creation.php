@@ -57,9 +57,8 @@
           <?php } else { ?>
             <p>0</p>
           <?php } ?>
-          <!-- image for reaction above -->
-          <!-- <img src="assets/heart.png" class="" id="heart-<?php //$creations_array[0]['id']?>" alt="votes"> -->
-          <img src="assets/heart.png" class="v" id="heart" alt="votes" onclick="heartAnimation()">
+          <!-- image for reaction above (visitor can vote/react by tapping on icon) -->
+          <img src="assets/heart.png" class="" id="heart" alt="votes" onclick="location.href='controller/vote_creation.php?creation_id=<?php echo $creations_array[0]['id']?>&type=likes'">
 
 
           <?php if (!empty($creations_array[0]['surprised'])) { ?>
@@ -67,21 +66,21 @@
           <?php } else { ?>
             <p>0</p>
           <?php } ?>
-          <img src="assets/surprised.png" class="" alt="reaction">
+          <img src="assets/surprised.png" class="" id="surprised" alt="reaction" onclick="location.href='controller/vote_creation.php?creation_id=<?php echo $creations_array[0]['id']?>&type=surprised'">
 
           <?php if (!empty($creations_array[0]['question_mark'])) { ?>
             <p><?php echo $creations_array[0]['question_mark'] ?></p>
           <?php } else { ?>
             <p>0</p>
           <?php } ?>
-          <img src="assets/question_mark.png" class="" alt="reaction">
+          <img src="assets/question_mark.png" class="" id="question_mark" alt="reaction" onclick="location.href='controller/vote_creation.php?creation_id=<?php echo $creations_array[0]['id']?>&type=question_mark'">
 
           <?php if (!empty($creations_array[0]['smart'])) { ?>
             <p><?php echo $creations_array[0]['smart'] ?></p>
           <?php } else { ?>
             <p>0</p>
           <?php } ?>
-          <img src="assets/smart.png" class="" alt="reaction">
+          <img src="assets/smart.png" class="" id="smart" alt="reaction" onclick="location.href='controller/vote_creation.php?creation_id=<?php echo $creations_array[0]['id']?>&type=smart'">
         </div>
           
       </div>

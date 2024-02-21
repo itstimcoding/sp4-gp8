@@ -8,7 +8,7 @@
 
     $top3_creations_array = null;
 
-    $sql = "SELECT * from creations ORDER BY likes DESC LIMIT 3";
+    $sql = "SELECT * from creations ORDER BY likes+surprised+question_mark+smart DESC LIMIT 3";
     $mysqli_result = mysqli_query($dbcon,$sql);
     $top3_creations_array = mysqli_fetch_all($mysqli_result,MYSQLI_ASSOC);
 

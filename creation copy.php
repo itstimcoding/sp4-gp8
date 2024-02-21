@@ -40,35 +40,28 @@
 </head>
 <body>
   <h1 class="single-creation-h1">Add a reaction</h1>
-  <div class="creation indv">  
+  <div class="creations indv">  
   <?php 
-  // sums up total reactions (number is used for ranking)
   $sum = $creations_array[0]['likes'] + $creations_array[0]['surprised'] + $creations_array[0]['question_mark'] + $creations_array[0]['smart'];
   ?>
     <div class="top3_indiv creation-page" id="top_3_position_2">
-      <img src="uploads/<?php echo $creations_array[0]['image_url']?>" alt="Top second creation" class="not-selectable">
+      <h3 class="h3-placing not-selectable">2</h3>
+      <img src="uploads/<?php echo $creations_array[0]['image_url']?>" alt="Top second creation">
       <div class="reactions creation-page">
-          <h4 class ="creation-page"><?php echo "Total Reactions = ".$sum.":"?></h4>
-        <div class="emotes">
-          <!-- checks array for value and only display reaction if it has a value -->
+          <h4><?php echo "Reactions".$sum.":"?></h4>
           <?php if (!empty($creations_array[0]['likes'])) { ?>
-            <?php echo $creations_array[0]['likes'] ?>
+            
             <img src="assets/heart.png" class="slide-out-top" alt="votes">
           <?php } ?>
           <?php if (!empty($creations_array[0]['surprised'])) { ?>
-            <?php echo $creations_array[0]['surprised'] ?>
-            <img src="assets/surprised.png" alt="reaction">
+              <img src="assets/surprised.png" alt="reaction">
           <?php } ?>
           <?php if (!empty($creations_array[0]['question_mark'])) { ?>
-            <?php echo $creations_array[0]['question_mark'] ?>
-            <img src="assets/question_mark.png" alt="reaction">
+              <img src="assets/question_mark.png" alt="reaction">
           <?php } ?>
           <?php if (!empty($creations_array[0]['smart'])) { ?>
-            <?php echo $creations_array[0]['smart'] ?>
-            <img src="assets/smart.png" alt="reaction">
+              <img src="assets/smart.png" alt="reaction">
           <?php } ?>
-        </div>
-          
       </div>
     
   </div>

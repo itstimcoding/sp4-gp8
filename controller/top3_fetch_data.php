@@ -16,6 +16,7 @@
 ?>
 
 <?php   if(isset($top3_creations_array[1])){
+    // sums up total of reactions
     $sum = $top3_creations_array[1]['likes'] + $top3_creations_array[1]['surprised'] + $top3_creations_array[1]['question_mark'] + $top3_creations_array[1]['smart'];
     ?>
 <div class="top3-wrapper">
@@ -25,6 +26,7 @@
             <img src="uploads/<?php echo $top3_creations_array[1]['image_url']?>" alt="Top second creation">
             <div class="reactions">
                 <h4><?php echo $sum?></h4>
+                 <!-- checks array for value and only display reaction if it has a value (avoid error) -->
                 <?php if (!empty($top3_creations_array[1]['likes'])) { ?>
                     <img src="assets/heart.png" alt="votes">
                 <?php } ?>

@@ -17,7 +17,7 @@
     <div class="recent">
         <img src="uploads/<?php echo $recent_creation['image_url']?>" alt="recent creation"> 
         <div class="recent-reactions">
-            <h5><?php echo $recent_creation['likes']?></h5>
+            <h5><?php echo $recent_creation['likes']?> reacts</h5>
             <h5><?php echo time_elapsed_string($recent_creation['created'])?></h5>
         </div>
     </div>            

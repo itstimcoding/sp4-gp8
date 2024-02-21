@@ -50,23 +50,36 @@
       <div class="reactions creation-page">
           <h4 class ="creation-page"><?php echo "Total Reactions = ".$sum.":"?></h4>
         <div class="emotes">
-          <!-- checks array for value and only display reaction if it has a value -->
+          <!-- reaction count -->
+          <!-- checks array for value and chooses between number and 0 to display (image this time is needed as button so show at all times) -->
           <?php if (!empty($creations_array[0]['likes'])) { ?>
-            <?php echo $creations_array[0]['likes'] ?>
-            <img src="assets/heart.png" class="slide-out-top" alt="votes">
+            <p><?php echo $creations_array[0]['likes'] ?></p>  
+          <?php } else { ?>
+            <p>0</p>
           <?php } ?>
+          <!-- image for reaction above -->
+          <img src="assets/heart.png" class="" alt="votes">
+
           <?php if (!empty($creations_array[0]['surprised'])) { ?>
-            <?php echo $creations_array[0]['surprised'] ?>
-            <img src="assets/surprised.png" alt="reaction">
+            <p><?php echo $creations_array[0]['surprised'] ?></p>
+          <?php } else { ?>
+            <p>0</p>
           <?php } ?>
+          <img src="assets/surprised.png" class="" alt="reaction">
+
           <?php if (!empty($creations_array[0]['question_mark'])) { ?>
-            <?php echo $creations_array[0]['question_mark'] ?>
-            <img src="assets/question_mark.png" alt="reaction">
+            <p><?php echo $creations_array[0]['question_mark'] ?></p>
+          <?php } else { ?>
+            <p>0</p>
           <?php } ?>
+          <img src="assets/question_mark.png" class="" alt="reaction">
+
           <?php if (!empty($creations_array[0]['smart'])) { ?>
-            <?php echo $creations_array[0]['smart'] ?>
-            <img src="assets/smart.png" alt="reaction">
+            <p><?php echo $creations_array[0]['smart'] ?></p>
+          <?php } else { ?>
+            <p>0</p>
           <?php } ?>
+          <img src="assets/smart.png" class="" alt="reaction">
         </div>
           
       </div>

@@ -24,7 +24,12 @@
         var isNew = 0;
 
         function load_top_works(){ // query.load credit : https://api.jquery.com/load/
-            $(".top-creations").load("controller/top3_fetch_data.php"); // loads file into div specified
+            if (window.innerWidth>768){
+                $(".top-creations").load("controller/top3_fetch_data.php"); // loads file into div specified
+            } else {
+                $(".top-creations").load("controller/top3_fetch_data(mobile).php");
+            };
+            
         };
         
         function load_recent_works(){ //  Method Mr Madhan taught, jquery get function
@@ -45,10 +50,10 @@
         load_recent_works();
 
         //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
-        setInterval(function(){
-             load_top_works();
-             load_recent_works();
-        },3000);       
+        // setInterval(function(){
+        //      load_top_works();
+        //      load_recent_works();
+        // },3000);       
     });
     </script>
     

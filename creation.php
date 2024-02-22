@@ -46,9 +46,9 @@
   $sum = $creations_array[0]['likes'] + $creations_array[0]['surprised'] + $creations_array[0]['question_mark'] + $creations_array[0]['smart'];
   ?>
     <div class="top3_indiv creation-page" id="top_3_position_2">
-      <img src="uploads/<?php echo $creations_array[0]['image_url']?>" alt="Top second creation" class="not-selectable">
+      <img src="uploads/<?php echo $creations_array[0]['image_url']?>" alt="Top second creation" class="not-selectable main-img">
       <div class="reactions creation-page">
-          <h4 class ="creation-page"><?php echo "Total Reactions = ".$sum.":"?></h4>
+          <h4 class ="creation-page"><?php echo "Total Reactions: ".$sum?></h4>
         <div class="emotes">
           <!-- reaction count -->
           <!-- checks array for value and chooses between number and 0 to display (image this time is needed as button so show at all times) -->

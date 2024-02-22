@@ -1,19 +1,23 @@
 <?php
 
+session_start();
 require "../utilities/database.php";
 $dbcon = open_db_connection();
 
 
 $new_id = 0;
 $new_vote_assoc = 0;
+$old_id = 0;
 
 //setting default values
 $isNew = 0;
 $creation_id = 0;
-$voteType = "vote type is unset";
+$voteType = "voteTypeisUnset";
 
-if (!isset($old_id)){
+if (!isset($_SESSION['old_id'])){
     $old_id = null;
+} else {
+    $old_id = $_SESSION['old_id'];
 }
 
 // getting latest id from database
@@ -25,27 +29,26 @@ $new_vote_assoc = mysqli_fetch_all($mysqli_result,MYSQLI_ASSOC);
 // set new id as queried id from database's multi-dimensional assoc 
 if(empty($new_id)){
     $new_id = $new_vote_assoc[0]["id"];
-}
+};
+
 
 // check if id changed
 if (!empty($old_id) && $new_id !== $old_id){
     $isNew = 1;
     $creation_id = $new_vote_assoc[0]['creation_id'];
+    $_SESSION['old_id'] = $old_id;
     check_vote_type();
-    echo("new id set");
-    echo($new_id);
-
 
 }else{ // if old id not set yet (at start of page) set old id by using current new id
     $old_id = $new_id;
-    // echo("old id set");
-    // echo($old_id);
+    
     $isNew = 0;
+    $_SESSION['old_id'] = $old_id;
 };
 
 function check_vote_type(){
     global $dbcon, $new_vote_assoc, $voteType;
-    if ($new_vote_assoc[0]['is_likes']==1){
+    if ($new_vote_assoc[0]['is_like']==1){
         $voteType = "likes";
     } else if ($new_vote_assoc[0]['is_surprised']==1){
         $voteType = "surprised";
@@ -55,6 +58,8 @@ function check_vote_type(){
         $voteType = "smart";
     } 
 }
+
+
 
 ?>
 

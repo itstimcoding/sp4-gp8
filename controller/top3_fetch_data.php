@@ -11,7 +11,7 @@
     $sql = "SELECT * from creations ORDER BY likes+surprised+question_mark+smart DESC LIMIT 3";
     $mysqli_result = mysqli_query($dbcon,$sql);
     $top3_creations_array = mysqli_fetch_all($mysqli_result,MYSQLI_ASSOC);
-
+    
     mysqli_free_result($mysqli_result);
 ?>
 
@@ -28,7 +28,7 @@
                 <h4><?php echo $sum?></h4>
                  <!-- checks array for value and only display reaction if it has a value (avoid error) -->
                 <?php if (!empty($top3_creations_array[1]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes" id="heart-<?php echo $top3_creations_array[1]['id']?>">
+                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[1]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[1]['surprised'])) { ?>
                     <img src="assets/surprised.png" alt="reaction" id="surprised-<?php echo $top3_creations_array[1]['id']?>">
@@ -77,7 +77,7 @@
             <div class="reactions">
                 <h4><?php echo $sum?></h4>
                 <?php if (!empty($top3_creations_array[2]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes">
+                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[2]['surprised'])) { ?>
                     <img src="assets/surprised.png" alt ="reaction">

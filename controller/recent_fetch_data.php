@@ -18,7 +18,8 @@
         <div class="recent">
             <img src="uploads/<?php echo $recent_creation['image_url']?>" alt="recent creation"> 
             <div class="recent-reactions">
-                <h5><?php echo $recent_creation['likes']?> reacts</h5>
+                <?php $sum = $recent_creation['likes'] + $recent_creation['surprised'] + $recent_creation['question_mark'] + $recent_creation['smart']; ?>
+                <h5><?php echo $sum?> reacts</h5>
                 <h5><?php echo time_elapsed_string($recent_creation['created'])?></h5>
             </div>
         </div>  
@@ -26,5 +27,6 @@
 <?php } ?>
 
 
+ 
 
 

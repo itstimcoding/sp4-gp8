@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/wrr3fkp.css">
     <script>
 
@@ -34,42 +35,89 @@
             $.get( "controller/recent_fetch_data.php", function(data) {
                 $("#recent-creations-content").html(data);
             });
+            //$("#recent-creations-content").load("controller/recent_fetch_data.php");
         };
 
-        function check_db_new(){
-            $.get( "controller/new_data_check.php", function(data) {
+        function check_db_new(){     
+            $.ajax({
+                url: "controller/new_data_check.php",
+                async: true,
+                success: function(data) {
+                    $("#check").html(data);
+                    // Handle the response data here
+                    var hiddenInput = document.querySelector('#is_new_vote');
+                    var hiddenInput2 = document.querySelector('#vote_type');
+                    var hiddenInput3 = document.querySelector('#creation_id');
+                    var hiddenInput4 = document.querySelector('#old_id');
+                    var hiddenInput5 = document.querySelector('#new_id');
+            
+
+                    // Get the value of the hidden inputs
+                    var isNew = hiddenInput.value;
+                    var voteType = hiddenInput2.value;
+                    var creationId = hiddenInput3.value;
+                    var old_id = hiddenInput4.value;
+                    var new_id = hiddenInput5.value;
+
+
+                    console.log("IsNew:     "+isNew);
+                    console.log("voteType:  "+voteType);
+                    console.log("creationId:"+creationId);
+                    console.log("old_id:    "+old_id);
+                    console.log("new_id:    "+new_id);
+                    load_top_works();
+                    load_recent_works();
+        
+                    if (isNew == 1){
+                        toggleAnimation(isNew, voteType, creationId);
+                    }
+                }
+            });
+
+
+            /*$.get( "controller/new_data_check.php", function(data) {
                 $("#recent-creations-content").html(data);
                 // Get the hidden input elements by their ID
                 var hiddenInput = document.querySelector('#is_new_vote');
                 var hiddenInput2 = document.querySelector('#vote_type');
                 var hiddenInput3 = document.querySelector('#creation_id');
+                var hiddenInput4 = document.querySelector('#old_id');
+                var hiddenInput5 = document.querySelector('#new_id');
+                
 
                 // Get the value of the hidden inputs
                 var isNew = hiddenInput.value;
                 var voteType = hiddenInput2.value;
                 var creationId = hiddenInput3.value;
+                var old_id = hiddenInput4.value;
+                var new_id = hiddenInput5.value;
+
 
                 console.log("IsNew:     "+isNew);
                 console.log("voteType:  "+voteType);
                 console.log("creationId:"+creationId);
-            });
+                console.log("old_id:    "+old_id);
+                console.log("new_id:    "+new_id);
+
+                if (isNew == 1){
+                toggleAnimation();
+                }
+            });*/
         };
-        //sets current & checks data for db
-        check_db_new();
+        
 
         // load first instance of top and recent data
         load_top_works();
         load_recent_works();
+        //sets current & checks data for db
+        check_db_new();
 
         //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
         setInterval(function(){
             var isNew = 0;
-             check_db_new();
-             if (isNew == 1){
-                toggle_animation();
-             };
-             load_top_works();
-             load_recent_works();
+            check_db_new();
+            // load_top_works();
+            // load_recent_works();
         },1000);       
     });
     </script>
@@ -84,12 +132,12 @@
         <div class="top-creations">          
         </div>
         <h2 class = "recent-h2 not-selectable">Recently made creations</h2>
-        <div class="recent-creations">   
+        <div class="recent-creations"> 
             <div id="recent-creations-content"></div>
         </div>
-        <div id="check" style="display: none;"></div>
+        
     </div>
-    
+    <div id="check" style="display: none;"></div>
 
     
     

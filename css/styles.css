@@ -240,6 +240,7 @@ h2 {
     position: relative;
     top: -26px;
     left: 9px;
+    color: black;
     font-family: raleway, sans-serif;
     font-weight: 500;
     font-size: 12px;
@@ -311,8 +312,13 @@ h4.creation-page {
 /* Homepage mobile */
 @media screen and (max-width: 768px) {
     .big-header {
-        font-size: 3em;
-        -webkit-text-stroke: 3px #e97934;
+        font-size: 2em;
+        text-align: left;
+        -webkit-text-stroke: 2px #e97934;
+        margin-left: 7vw;
+        margin-bottom: 2vh;
+        margin-top: 7vh;
+
     }
     .top-one img {
         width: auto;
@@ -333,15 +339,20 @@ h4.creation-page {
     .recent-creations {
         margin: 0;
     }
+    .recent-h2 {
+        font-size: 1.3em;
+        font-weight: 500;
+        margin-left: 7vw;
+    }
     #recent-creations-content{
-        margin-left: 11vw;
+        margin-left: 7vw;
     }
     .recent h5 {
         font-size: 14px;
     }
     ::-webkit-scrollbar {
         width: 10px;
-        height: 10px;
+        height: 3px;
       }
     ::-webkit-scrollbar-thumb {
     border-radius: 10px;

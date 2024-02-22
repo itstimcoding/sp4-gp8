@@ -31,30 +31,30 @@
         };
         
         function load_recent_works(){ //  Method Mr Madhan taught, jquery get function
-            $.get( "controller/recent_fetch_data.php", function( data ) {
+            $.get( "controller/recent_fetch_data.php", function(data) {
                 $("#recent-creations-content").html(data);
             });
         };
 
         function check_db_new(){
-            $.get( "controller/new_data_check.php", function( data ) {
+            $.get( "controller/new_data_check.php", function(data) {
                 $("#recent-creations-content").html(data);
-                // Get the hidden input element by its ID
-                const hiddenInput = document.querySelector('#new_vote_id');
+                // Get the hidden input elements by their ID
+                var hiddenInput = document.querySelector('#is_new_vote');
+                var hiddenInput2 = document.querySelector('#vote_type');
+                var hiddenInput3 = document.querySelector('#creation_id');
 
-                // Get the value of the hidden input
-                const isNew = hiddenInput.value;
-                console.log(isNew);
+                // Get the value of the hidden inputs
+                var isNew = hiddenInput.value;
+                var voteType = hiddenInput2.value;
+                var creationId = hiddenInput3.value;
+
+                console.log("IsNew:     "+isNew);
+                console.log("voteType:  "+voteType);
+                console.log("creationId:"+creationId);
             });
-            // $("#check").load("controller/new_data_check.php");
-            // // Get the hidden input element by its ID
-            // const hiddenInput = document.querySelector('#new_vote_id');
-
-            // // Get the value of the hidden input
-            // const isNew = hiddenInput.value;
-            // console.log(isNew);
         };
-        //sets current data for db
+        //sets current & checks data for db
         check_db_new();
 
         // load first instance of top and recent data
@@ -62,10 +62,15 @@
         load_recent_works();
 
         //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
-        // setInterval(function(){
-        //      load_top_works();
-        //      load_recent_works();
-        // },3000);       
+        setInterval(function(){
+            var isNew = 0;
+             check_db_new();
+             if (isNew == 1){
+                toggle_animation();
+             };
+             load_top_works();
+             load_recent_works();
+        },3000);       
     });
     </script>
     
@@ -80,14 +85,9 @@
         </div>
         <h2 class = "recent-h2 not-selectable">Recently made creations</h2>
         <div class="recent-creations">   
-            <div id="recent-creations-content">
+            <div id="recent-creations-content"></div>
         </div>
-
-        
-    </div>
-    <div id="check">
-
-    </div>
+        <div id="check" style="display: none;"></div>
     </div>
     
 

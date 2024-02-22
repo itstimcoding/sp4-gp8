@@ -443,3 +443,12 @@ h4.creation-page {
     font-size: 30px;
     margin-left: 40px;
 }
+
+
+/* hiding hidden inputs new_data_check.php */
+#is_new_vote, #vote_type, #creation_id{
+    display:none;
+    width: 0;
+    height: 0;
+}
+

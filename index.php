@@ -21,8 +21,6 @@
     <script>
 
     $(document).ready(function(){
-        var isNew = 0;
-
         function load_top_works(){ // query.load credit : https://api.jquery.com/load/
             if (window.innerWidth>768){
                 $(".top-creations").load("controller/top3_fetch_data.php"); // loads file into div specified
@@ -36,14 +34,28 @@
             $.get( "controller/recent_fetch_data.php", function( data ) {
                 $("#recent-creations-content").html(data);
             });
-        }
+        };
 
         function check_db_new(){
-            $.get( "controller/recent_fetch_data.php", function( data ) {
-                document.querySelector('#');
+            $.get( "controller/new_data_check.php", function( data ) {
+                $("#recent-creations-content").html(data);
+                // Get the hidden input element by its ID
+                const hiddenInput = document.querySelector('#new_vote_id');
+
+                // Get the value of the hidden input
+                const isNew = hiddenInput.value;
+                console.log(isNew);
             });
-            
-        }
+            // $("#check").load("controller/new_data_check.php");
+            // // Get the hidden input element by its ID
+            // const hiddenInput = document.querySelector('#new_vote_id');
+
+            // // Get the value of the hidden input
+            // const isNew = hiddenInput.value;
+            // console.log(isNew);
+        };
+        //sets current data for db
+        check_db_new();
 
         // load first instance of top and recent data
         load_top_works();
@@ -71,9 +83,10 @@
             <div id="recent-creations-content">
         </div>
 
-        <div style="display:none;" id="">
+        
+    </div>
+    <div id="check">
 
-        </div>
     </div>
     </div>
     

@@ -24,3 +24,14 @@
             // }
                 //$(".top-creations").load("controller/top3_fetch_data.php");
         },3000);
+
+        function check_db_new(){
+            $.get( "controller/recent_fetch_data.php", function( data ) {
+                $("#check").load("controller/new_data_check.php");
+                    // Get the hidden input element by its ID
+                    const isNew = document.querySelector('#new_vote_id');
+
+                    // Get the value of the hidden input
+                    const isNew = isNew.value;
+                    console.log(isNew);
+            });

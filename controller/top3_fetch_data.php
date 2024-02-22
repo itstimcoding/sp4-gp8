@@ -65,7 +65,6 @@
                     <img src="assets/smart.png" alt="reaction">
                 <?php } ?> 
             </div>
-            
         </div>
     </a>
     <?php } ?>

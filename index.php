@@ -70,7 +70,7 @@
              };
              load_top_works();
              load_recent_works();
-        },3000);       
+        },1000);       
     });
     </script>
     

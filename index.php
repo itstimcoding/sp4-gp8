@@ -73,36 +73,6 @@
                     }
                 }
             });
-
-
-            /*$.get( "controller/new_data_check.php", function(data) {
-                $("#recent-creations-content").html(data);
-                // Get the hidden input elements by their ID
-                var hiddenInput = document.querySelector('#is_new_vote');
-                var hiddenInput2 = document.querySelector('#vote_type');
-                var hiddenInput3 = document.querySelector('#creation_id');
-                var hiddenInput4 = document.querySelector('#old_id');
-                var hiddenInput5 = document.querySelector('#new_id');
-                
-
-                // Get the value of the hidden inputs
-                var isNew = hiddenInput.value;
-                var voteType = hiddenInput2.value;
-                var creationId = hiddenInput3.value;
-                var old_id = hiddenInput4.value;
-                var new_id = hiddenInput5.value;
-
-
-                console.log("IsNew:     "+isNew);
-                console.log("voteType:  "+voteType);
-                console.log("creationId:"+creationId);
-                console.log("old_id:    "+old_id);
-                console.log("new_id:    "+new_id);
-
-                if (isNew == 1){
-                toggleAnimation();
-                }
-            });*/
         };
         
 
@@ -114,11 +84,8 @@
 
         //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
         setInterval(function(){
-            var isNew = 0;
             check_db_new();
-            // load_top_works();
-            // load_recent_works();
-        },1000);       
+        },30000);       
     });
     </script>
     

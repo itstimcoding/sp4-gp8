@@ -4,7 +4,7 @@ session_start();
 require "../utilities/database.php";
 $dbcon = open_db_connection();
 
-
+// old Id is like the Id from the previous time this code has ran
 $new_id = 0;
 $new_vote_assoc = 0;
 $old_id = 0;
@@ -36,7 +36,13 @@ if(empty($new_id)){
 if (!empty($old_id) && $new_id !== $old_id){
     $isNew = 1;
     $creation_id = $new_vote_assoc[0]['creation_id'];
+    //update old id to become new id for next cycle
+    $old_id = $new_id;
+
+    // save id for next session as old id
     $_SESSION['old_id'] = $old_id;
+
+    
     check_vote_type();
 
 }else{ // if old id not set yet (at start of page) set old id by using current new id

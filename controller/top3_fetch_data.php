@@ -28,16 +28,17 @@
                 <h4><?php echo $sum?></h4>
                  <!-- checks array for value and only display reaction if it has a value (avoid error) -->
                 <?php if (!empty($top3_creations_array[1]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[1]['id']?>">
+                    <!-- dynamic_id for animation -->
+                    <img src="assets/heart.png" alt="votes" class="" id="likes-<?php echo $top3_creations_array[1]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[1]['surprised'])) { ?>
-                    <img src="assets/surprised.png" alt="reaction" id="surprised-<?php echo $top3_creations_array[1]['id']?>">
+                    <img src="assets/surprised.png" alt="reaction" class="" id="surprised-<?php echo $top3_creations_array[1]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[1]['question_mark'])) { ?>
-                    <img src="assets/question_mark.png" alt="reaction" id="question_mark-<?php echo $top3_creations_array[1]['id']?>">
+                    <img src="assets/question_mark.png" alt="reaction" class="" id="question_mark-<?php echo $top3_creations_array[1]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[1]['smart'])) { ?>
-                    <img src="assets/smart.png" alt="reaction" id="smart-<?php echo $top3_creations_array[1]['id']?>">
+                    <img src="assets/smart.png" alt="reaction" class="" id="smart-<?php echo $top3_creations_array[1]['id']?>">
                 <?php } ?> 
             </div>
             
@@ -53,16 +54,16 @@
             <div class="reactions">
                 <h4><?php echo $sum?></h4>
                 <?php if (!empty($top3_creations_array[0]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[0]['id']?>">
+                    <img src="assets/heart.png" alt="votes" class="" id="likes-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?> 
                 <?php if (!empty($top3_creations_array[0]['surprised'])) { ?>
-                    <img src="assets/surprised.png" alt="reaction">
+                    <img src="assets/surprised.png" alt="reaction" class="" id="surprised-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[0]['question_mark'])) { ?>
-                    <img src="assets/question_mark.png" alt="reaction">
+                    <img src="assets/question_mark.png" alt="reaction" class="" id="question_mark-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[0]['smart'])) { ?>
-                    <img src="assets/smart.png" alt="reaction">
+                    <img src="assets/smart.png" alt="reaction" class="" id="smart-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?> 
             </div>
         </div>
@@ -77,16 +78,16 @@
             <div class="reactions">
                 <h4><?php echo $sum?></h4>
                 <?php if (!empty($top3_creations_array[2]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[0]['id']?>">
+                    <img src="assets/heart.png" alt="votes" class="" id="likes-<?php echo $top3_creations_array[2]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[2]['surprised'])) { ?>
-                    <img src="assets/surprised.png" alt ="reaction">
+                    <img src="assets/surprised.png" alt ="reaction" id="surprised-<?php echo $top3_creations_array[2]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[2]['question_mark'])) { ?>
-                    <img src="assets/question_mark.png"alt="reaction">
+                    <img src="assets/question_mark.png"alt="reaction" id="question_mark-<?php echo $top3_creations_array[2]['id']?>">
                 <?php } ?>
                 <?php if (!empty($top3_creations_array[2]['smart'])) { ?>
-                    <img src="assets/smart.png" alt="reaction">
+                    <img src="assets/smart.png" alt="reaction" class="" id="smart-<?php echo $top3_creations_array[2]['id']?>">
                 <?php } ?> 
             </div>
             
@@ -95,5 +96,4 @@
     <?php } ?>
 
    
-</div> 
-</div>   
+</div>  

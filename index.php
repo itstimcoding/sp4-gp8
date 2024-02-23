@@ -1,15 +1,3 @@
-<?php
-    // require "utilities/database.php";
-    // $dbcon = open_db_connection();
-    // if (!function_exists('getConnection')) { 
-    //     $dbcon = open_db_connection();
-    // }
-    //dbcon set in fetch files top3_fetch_data.php and recent_fetch_data.php
-    // require "controller/new_data_check.php"; //check only after db connection open
-    $isNew = null;
-    
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,71 +10,19 @@
     <script>
 
     $(document).ready(function(){
-        function load_top_works(){ // query.load credit : https://api.jquery.com/load/
-            if (window.innerWidth>768){
-                $(".top-creations").load("controller/top3_fetch_data.php"); // loads file into div specified
-            } else {
-                $(".top-creations").load("controller/top3_fetch_data(mobile).php");
-            };
-            
-        };
-        
-        function load_recent_works(){ //  Method Mr Madhan taught, jquery get function
-            $.get( "controller/recent_fetch_data.php", function(data) {
-                $("#recent-creations-content").html(data);
-            });
-            //$("#recent-creations-content").load("controller/recent_fetch_data.php");
-        };
+        //put check_db_new() function in main.js so that top3_fetch_data can access it
+        // because somehow only top3 fetch will be able to do classList.add for one of the top3_fetch_data.php elements.
 
-        function check_db_new(){     
-            $.ajax({
-                url: "controller/new_data_check.php",
-                async: true,
-                success: function(data) {
-                    $("#check").html(data);
-                    // Handle the response data here
-                    var hiddenInput = document.querySelector('#is_new_vote');
-                    var hiddenInput2 = document.querySelector('#vote_type');
-                    var hiddenInput3 = document.querySelector('#creation_id');
-                    var hiddenInput4 = document.querySelector('#old_id');
-                    var hiddenInput5 = document.querySelector('#new_id');
-            
-
-                    // Get the value of the hidden inputs
-                    var isNew = hiddenInput.value;
-                    var voteType = hiddenInput2.value;
-                    var creationId = hiddenInput3.value;
-                    var old_id = hiddenInput4.value;
-                    var new_id = hiddenInput5.value;
-
-
-                    console.log("IsNew:     "+isNew);
-                    console.log("voteType:  "+voteType);
-                    console.log("creationId:"+creationId);
-                    console.log("old_id:    "+old_id);
-                    console.log("new_id:    "+new_id);
-                    load_top_works();
-                    load_recent_works();
-        
-                    if (isNew == 1){
-                        toggleAnimation(isNew, voteType, creationId);
-                    }
-                }
-            });
-        };
-        
-
-        // load first instance of top and recent data
+        //load first instance
         load_top_works();
         load_recent_works();
-        //sets current & checks data for db
-        check_db_new();
-
         //interval credits : https://crunchify.com/how-to-refresh-div-content-without-reloading-page-using-jquery-and-ajax/
         setInterval(function(){
-            check_db_new();
-        },30000);       
+            load_top_works();
+            load_recent_works();
+        },1000);       
     });
+    
     </script>
     
     <title>Main page</title>

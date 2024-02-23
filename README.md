@@ -17,5 +17,6 @@ Features:
 - Insertion into database (Unity API, *hidden_creation_in...php*)
 - Updating record (Visitors Voting/reacting, *creation.php,controller/save_new_creation.php*)
 - AJAX realtime leaderboard for onsite leaderboard/ showcase (Visitors Voting/reacting, *top3/recent_fetch_data, head tag in index.php*)
-- Listing database data (*same as previous*)
-- Responsive (index.php only)
+- Listing database data 
+- Responsive (index.php only because only that page will be used by both TV and visitors on their phone)
+- Ajax updating animations specific to posts

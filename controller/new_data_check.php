@@ -42,7 +42,7 @@ if (!empty($old_id) && $new_id !== $old_id){
     // save id for next session as old id
     $_SESSION['old_id'] = $old_id;
 
-    
+    // check vote type and set variable to $voteType
     check_vote_type();
 
 }else{ // if old id not set yet (at start of page) set old id by using current new id

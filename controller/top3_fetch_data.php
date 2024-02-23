@@ -54,7 +54,7 @@
             <div class="reactions">
                 <h4><?php echo $sum?></h4>
                 <?php if (!empty($top3_creations_array[0]['likes'])) { ?>
-                    <img src="assets/heart.png" alt="votes" class="" id="likes-<?php echo $top3_creations_array[0]['id']?>">
+                    <img src="assets/heart.png" alt="votes" id="likes-<?php echo $top3_creations_array[0]['id']?>">
                 <?php } ?> 
                 <?php if (!empty($top3_creations_array[0]['surprised'])) { ?>
                     <img src="assets/surprised.png" alt="reaction" class="" id="surprised-<?php echo $top3_creations_array[0]['id']?>">
@@ -95,5 +95,11 @@
     </a>
     <?php } ?>
 
-   
+   <script>
+        
+        check_db_new();
+              
+ 
+        
+   </script>
 </div>  

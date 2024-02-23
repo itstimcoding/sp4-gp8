@@ -48,7 +48,7 @@ function check_db_new(){
             console.log("creationId:"+creationId);
             console.log("old_id:    "+old_id);
             console.log("new_id:    "+new_id);
-            
+
             if (isNew == 1){
                 toggleAnimation(isNew, voteType, creationId);
             }
@@ -98,8 +98,8 @@ function toggleAnimation(isNew, voteType, creationId){
             console.log(x);
             classToggle(x);
             console.log("toggled");
-            setTimeout(classToggle(x), 700);
-            console.log("untoggled");
+            // setTimeout(classToggle(x), 700);
+            // console.log("untoggled");
         }
     }
 }
